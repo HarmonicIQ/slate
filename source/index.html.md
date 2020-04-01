@@ -2,14 +2,9 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
   - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -18,82 +13,50 @@ search: true
 ---
 
 # Introduction
-
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
+PUT: Complete overrides the record  
+POST: Creates a new record  
+PATCH: Updates a record based on provided information, leaving not passed fields intact  
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
+> Make sure to replace `keykeykey` with your API key.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean euismod elementum nisi quis eleifend quam adipiscing.
 
-```python
-import kittn
+Sit amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet porttitor eget dolor morbi non arcu risus.
 
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: keykeykey`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>keykeykey</code> with your personal API key.
 </aside>
 
-# Kittens
+# Households
 
-## Get All Kittens
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean euismod elementum nisi quis eleifend quam adipiscing. Sit amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet porttitor eget dolor morbi non arcu risus.
 
-```ruby
-require 'kittn'
+## Create a Household
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "guid": "5b6cba42-2558-46b0-9300-bdb53267528f"
+}
 ```
 
-```python
-import kittn
+This endpoint creates a new household.
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+###HTTP Request
+`POST http://harmoniciq.com/api/households`
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+<aside class="success">
+The reason to have a home is to keep certain people in and everyone else out.
+</aside>
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+## Get info about a specific household
 
 > The above command returns JSON structured like this:
 
@@ -101,139 +64,475 @@ let kittens = api.kittens.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "guid": "35e6f06c-b3fc-410d-989e-fc529b582887"
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "id": 7,
+    "street": "321 Maple Street",
+    "state": "Kansas",
+    "country": "United States of America",
+    "city": "Smallville",
+    "zip": "67524"
+  },
+  {
+    "id": 1,
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship",
+    "email": "imnotsu@perman.com",
+    "relationship": "primary"
+  }  
+]
+```
+This endpoint retrieves info about specific household  
+###HTTP Request
+`GET http://harmoniciq.com/api/households/:id `
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the household to retrieve
+
+<aside class="success">
+includes current address and information about the account holder
+</aside>
+
+## Update a specific household
+```json
+[
+  {
+    "id": 1,
+    "guid": "35e6f06c-b3fc-410d-989e-fc529b582887"
   }
 ]
 ```
+> The above command returns JSON structured like this:
 
-This endpoint retrieves all kittens.
+```json
+[
+  {
+    "id": 1,
+    "guid": "35e6f06c-b3fc-410d-989e-fc529b582887"
+  }
+]
+```
+This endpoint updates a specific household.
+###HTTP Request
+`PATCH http://harmoniciq.com/api/households/:id `
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the household to retrieve
+##Delete a Household
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "guid" : "deleted_WyTNnktArT"
+}
+```
+
+This endpoint deletes a specific household.
 
 ### HTTP Request
+`DELETE http://harmoniciq.com/api/households/:id`
 
-`GET http://example.com/api/kittens`
+### URL Parameters
 
-### Query Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the household to delete
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+# Addresses
+##Create an address
+  > This command accepts JSON structured like this:  
 
+  ```json
+  [
+    {
+      "street": "321 Maple Street",
+      "state": "Kansas",
+      "country": "United States of America",
+      "city": "Smallville",
+      "zip": "67524"
+    }
+  ]
+  ```
+
+  This endpoint creates a address for a specific household
+###HTTP Request
+`POST http://harmoniciq.com/api/households/:id/addresses`
+
+##Delete an address
+> This command returns JSON structured like this:  
+
+```json
+[
+  {
+    "street": "deleted_321 Maple Street",
+    "state": "Kansas",
+    "country": "United States of America",
+    "city": "Smallville",
+    "zip": "67524"
+  }
+]
+```
+This endpoints retires a specific address.
+###HTTP Request
+`DELETE http://harmoniciq.com/api/households/addresses/:id`
+
+# People
+##Create a person
+> This command accepts JSON structured like this:  
+
+```json
+[
+  {
+    "id": 1,
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship",
+    "relationship": "primary"
+  }
+]
+```
+This endpoints create a person in a household
+###HTTP Request
+`POST http://harmoniciq.com/api/households/:id/people`
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+The first person created in the household becomes the primary.  
+{relationship: "primary"}
+is required when adding new people to a household
+{relationship: "spouse"}
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+##Get info about all people in a household
+> This command returns JSON structured like this:  
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+[
+  {
+    "id": 1,
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship",
+    "relationship": "primary"
+  },
+  {
+    "id": 1,
+    "first_name": "Lois",
+    "last_name": "Lane",
+    "birthday": "17 Aug 1976",
+    "height": 72,
+    "weight": 155,
+    "gender": "Female",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "Citizen",
+    "relationship": "spouse"
+  }
+]
 ```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+This endpoints retrieves all people in a household
+###HTTP Request
+`GET http://harmoniciq.com/api/households/:id/people`
+##Get info about a specific person
+> This command returns JSON structured like this:  
 
 ```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+[
+  {
+    "id": 1,
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship",
+    "relationship": "primary"
+  },
+  {  
+    "id": 4,
+    "email": "imnotsu@perman.com"
+  },
+  {
+    "id":6,
+    "nicotine_use": false,
+    "heath_rating": 10
+  }
+]
 ```
+This endpoints retrieves a specific person , their email and their risk profile.
+###HTTP Request
+`GET http://harmoniciq.com/api/households/people/:id`
+##Get info about account holder
+> This command accepts JSON structured like this:  
 
-This endpoint deletes a specific kitten.
+```json
+[
+  {
+    "id": 1,
+    "first_name": "Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship"
+  },
+  {  
+    "id": 4,
+    "email": "imnotsu@perman.com"
+  },
+  {
+    "id":6,
+    "nicotine_use": false,
+    "heath_rating": 10
+  }
+]
+```
+This endpoints retrieves a households account holder, their email and their risk profile.
+###HTTP Request
+`GET http://harmoniciq.com/api/households/:id/account-holder`
+##Update a person
+```json
+[
+  {
+    "id": 1,
+    "first_name": "Kal-El"
+  }
+]
+```
+> request above
+  response below
 
-### HTTP Request
+  ```json
+  [
+    {
+      "id": 1,
+      "first_name": "Kal-El",
+      "last_name": "Kent",
+      "birthday": "10 Jun 1950",
+      "height": 74,
+      "weight": 220,
+      "gender": "Male",
+      "SSN": "XXXX",
+      "drivers_license": "XXXXXXXX",
+      "citizenship": "honorary citizenship"
+    }
+  ]
+  ```
+This endpoints updates a specific person.
+###HTTP Request
+`PATCH http://harmoniciq.com/api/households/:id/people/:id`
+##Update a person's risk profile
+```json
+[
+  {
+    "heath_rating": "8"
+  }
+]
+```
+> request above
+  response below
 
-`DELETE http://example.com/kittens/<ID>`
+  ```json
+  [
+    {
+      "id":6,
+      "nicotine_use": false,
+      "heath_rating": 8
+    }
+  ]
+  ```
+This endpoints updates a specific person.
+###HTTP Request
+`PATCH http://harmoniciq.com/api/households/:id/people/:id/risk-profile`
 
-### URL Parameters
+##Delete a person
+> This command returns JSON structured like this:  
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+```json
+[
+  {
+    "id": 1,
+    "first_name": "deleted_Clark",
+    "last_name": "Kent",
+    "birthday": "10 Jun 1950",
+    "height": 74,
+    "weight": 220,
+    "gender": "Male",
+    "SSN": "XXXX",
+    "drivers_license": "XXXXXXXX",
+    "citizenship": "honorary citizenship",
+  }
+]
+```
+This endpoints retires a specific person.
+###HTTP Request
+`DELETE http://harmoniciq.com/api/households/:id/people/:id`
 
+# Emails
+##Create an email
+  > This command accepts JSON structured like this:  
+
+  ```json
+  [
+    {
+      "email": "imnotsu@perman.com"
+    }
+  ]
+  ```
+
+  This endpoint creates a email for a specific user
+###HTTP Request
+`POST http://harmoniciq.com/api/households/:id/people/:id/emails`
+
+##Delete an email
+> This command returns JSON structured like this:  
+
+```json
+[
+  {
+    "email": "deleted_imnotsu@perman.com"
+  }
+]
+```
+This endpoints retires a specific email.
+###HTTP Request
+`DELETE http://harmoniciq.com/api/households/:id/emails/:id`
+
+# Pets
+##Create a pet
+>This endpoint accepts JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Krypto",
+    "age": 5,
+    "gender": "Male",
+    "breed": "Lab",
+    "type": "Canine"
+  }
+]
+```
+his endpoints create a pet in a household
+###HTTP Request
+`POST http://harmoniciq.com/api/households/:id/pets`
+##Get info about all pets in a household
+> This command returns JSON structured like this:  
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Krypto",
+    "age": 5,
+    "gender": "Male",
+    "breed": "Lab",
+    "type": "Canine"
+  },
+  {
+    "id": 2,
+    "name": "Streaky",
+    "age": 3,
+    "gender": "Female",
+    "breed": "Shorthair",
+    "type": "Feline"
+  },
+]
+```
+This endpoints retrieves all pets in a household
+###HTTP Request
+`GET http://harmoniciq.com/api/households/:id/pets`
+##Get info about a specific pet
+> This command returns JSON structured like this:  
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Krypto",
+    "age": 5,
+    "gender": "Male",
+    "breed": "Lab",
+    "type": "Canine"
+  }
+]
+```
+This endpoints retrieves a specific pet in a household
+###HTTP Request
+`GET http://harmoniciq.com/api/households/:id/pets/:id`
+##Update a pet
+```json
+[
+  {
+    "id": 1,
+    "age": 6,
+  }
+]
+```
+> request above
+  response below
+
+  ```json
+  [
+    {
+      "id": 1,
+      "name": "Krypto",
+      "age": 6,
+      "gender": "Male",
+      "breed": "Lab",
+      "type": "Canine"
+    }
+  ]
+  ```
+This endpoints updates a specific pet.
+###HTTP Request
+`PATCH http://harmoniciq.com/api/househlds/:id/pets/:id`
+##Delete a pet
+> This command returns JSON structured like this:  
+
+```json
+[
+  {
+    "id": 1,
+    "name": "deleted_Krypto",
+    "age": 5,
+    "gender": "Male",
+    "breed": "Lab",
+    "type": "Canine"
+  }
+]
+```
+This endpoints retires a specific pet.
+###HTTP Request
+`DELETE http://harmoniciq.com/api/households/:id/pets/:id`
