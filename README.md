@@ -1,47 +1,47 @@
-# Households
-## Create a Household
-`POST http://harmoniciq.com/api/households`
-## Get info about a specific household
-`GET http://harmoniciq.com/api/households/:id `
-## Update a specific household
-`PATCH http://harmoniciq.com/api/households/:id `
-##Delete a Household
-# Addresses
-##Create an address
-`POST http://harmoniciq.com/api/households/:id/addresses`
-##Delete an address
-`DELETE http://harmoniciq.com/api/households/addresses/:id`
+# Households  
+## Create a Household  
+`POST http://harmoniciq.com/api/households`  
+## Get info about a specific household  
+`GET http://harmoniciq.com/api/households/:id `  
+## Update a specific household  
+`PATCH http://harmoniciq.com/api/households/:id `  
+##Delete a Household  
+# Addresses  
+##Create an address  
+`POST http://harmoniciq.com/api/households/:id/addresses`  
+##Delete an address  
+`DELETE http://harmoniciq.com/api/households/addresses/:id`  
 # People
-##Create a person
-`POST http://harmoniciq.com/api/households/:id/people`
-##Get info about all people in a household
-`GET http://harmoniciq.com/api/households/:id/people`
-##Get info about a specific person
-`GET http://harmoniciq.com/api/households/people/:id`
-##Get info about account holder
-`GET http://harmoniciq.com/api/households/:id/account-holder`
-##Update a person
-`PATCH http://harmoniciq.com/api/households/:id/people/:id`
-##Update a person's risk profile
-`PATCH http://harmoniciq.com/api/households/:id/people/:id/risk-profile`
-##Delete a person
-`DELETE http://harmoniciq.com/api/households/:id/people/:id`
-# Emails
-##Create an email
-`POST http://harmoniciq.com/api/households/:id/people/:id/emails`
-##Delete an email
-`DELETE http://harmoniciq.com/api/households/:id/emails/:id`
-# Pets
-##Create a pet
-`POST http://harmoniciq.com/api/households/:id/pets`
-##Get info about all pets in a household
-`GET http://harmoniciq.com/api/households/:id/pets`
-##Get info about a specific pet
-`GET http://harmoniciq.com/api/households/:id/pets/:id`
-##Update a pet
-`PATCH http://harmoniciq.com/api/househlds/:id/pets/:id`
-##Delete a pet
-`DELETE http://harmoniciq.com/api/households/:id/pets/:id`
+##Create a person  
+`POST http://harmoniciq.com/api/households/:id/people`  
+##Get info about all people in a household  
+`GET http://harmoniciq.com/api/households/:id/people`  
+##Get info about a specific person  
+`GET http://harmoniciq.com/api/households/people/:id`  
+##Get info about account holder  
+`GET http://harmoniciq.com/api/households/:id/account-holder`  
+##Update a person  
+`PATCH http://harmoniciq.com/api/households/:id/people/:id`  
+##Update a person's risk profile  
+`PATCH http://harmoniciq.com/api/households/:id/people/:id/risk-profile`  
+##Delete a person  
+`DELETE http://harmoniciq.com/api/households/:id/people/:id`  
+# Emails  
+##Create an email  
+`POST http://harmoniciq.com/api/households/:id/people/:id/emails`  
+##Delete an email  
+`DELETE http://harmoniciq.com/api/households/:id/emails/:id`  
+# Pets  
+##Create a pet  
+`POST http://harmoniciq.com/api/households/:id/pets`  
+##Get info about all pets in a household  
+`GET http://harmoniciq.com/api/households/:id/pets`  
+##Get info about a specific pet  
+`GET http://harmoniciq.com/api/households/:id/pets/:id`  
+##Update a pet  
+`PATCH http://harmoniciq.com/api/househlds/:id/pets/:id`  
+##Delete a pet  
+`DELETE http://harmoniciq.com/api/households/:id/pets/:id`  
 
 Markdown format
 
